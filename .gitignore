@@ -1,0 +1,19 @@
+# Eclipse settings #
+########################
+.settings/
+.classpath
+.project
+
+# Merge Files #
+########################
+*.BASE
+*.LOCAL
+*.REMOTE
+
+# JAVA GENERATED FILES #
+########################
+*.class
+
+# Maven #
+########################
+target/*
