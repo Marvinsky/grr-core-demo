@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.demomvn.dto.response.BeanResp;
 import com.demomvn.spring.dao.SpringBeanDao;
 import com.demomvn.spring.model.SpringBean;
+import com.demomvn.spring.model.SpringBeanStpr;
 import com.demomvn.spring.service.SpringBeanService;
 
 @Transactional(readOnly = false)
@@ -24,6 +25,10 @@ public class SpringBeanServiceImpl implements SpringBeanService{
 	public List<SpringBean> getSpringBeanList(){
         return springBeanDao.getSpringBeanList();
     }
+	
+	public List<SpringBeanStpr> getListSpringBeanStpr(final int idSpringBean){
+		return springBeanDao.getListSpringBeanStpr(idSpringBean);
+	}
 	
 	public void save(SpringBean springBean){
 		springBeanDao.save(springBean);

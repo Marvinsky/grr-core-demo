@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.demomvn.spring.dao.SpringBeanDao;
 import com.demomvn.spring.model.SpringBean;
+import com.demomvn.spring.model.SpringBeanStpr;
 
 @Repository
 public class SpringBeanDaoImpl implements SpringBeanDao{
@@ -26,6 +27,14 @@ public class SpringBeanDaoImpl implements SpringBeanDao{
 		
 		return lstSpringBean;
 	}
+	
+	public List<SpringBeanStpr> getListSpringBeanStpr(final int idSpringBean){
+        List<SpringBeanStpr> lst_springBeanSpr = new ArrayList<SpringBeanStpr>();
+        
+        lst_springBeanSpr = (List)hibernateTemplate.findByNamedQuery("getListSpringBean", idSpringBean);
+        
+        return lst_springBeanSpr;
+    }
 	
 	public void save(SpringBean springBean){
 		hibernateTemplate.save(springBean);
