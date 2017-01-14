@@ -1,9 +1,0 @@
-com\demomvn\spring\model\SpringBeanStpr.class
-com\demomvn\dto\response\BeanResp.class
-com\demomvn\ws\Hello.class
-com\demomvn\spring\dao\impl\SpringBeanDaoImpl.class
-com\demomvn\spring\controller\DemoController.class
-com\demomvn\spring\service\impl\SpringBeanServiceImpl.class
-com\demomvn\spring\service\SpringBeanService.class
-com\demomvn\spring\dao\SpringBeanDao.class
-com\demomvn\spring\model\SpringBean.class
