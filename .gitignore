@@ -1,8 +1,8 @@
 # Eclipse settings #
 ########################
 .settings/
-#.classpath
-#.project
+.classpath
+.project
 
 # Merge Files #
 ########################
