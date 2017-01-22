@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.demomvn.dto.request.BeanReq;
 import com.demomvn.dto.response.BeanResp;
 import com.demomvn.spring.model.SpringBean;
 import com.demomvn.spring.model.SpringBeanStpr;
@@ -36,12 +37,13 @@ public class SpringBeanServiceImplTest {
 		List<SpringBean> lst = springBeanService.getSpringBeanList();
         System.out.println("SpringBean:"+lst.size());
         
-        
-        int id = lst.get(lst.size()-1).getIdSpringBean();
-        List<SpringBeanStpr> lstStpr = springBeanService.getListSpringBeanStpr(id);
+        String nombre = lst.get(lst.size()-1).getNombre();
+        BeanReq req = new BeanReq();
+        req.setNombre(nombre);
+        List<SpringBeanStpr> lstStpr = springBeanService.getListSpringBeanStpr(req);
         System.out.println("SpringBeanStpr:["+lstStpr.get(0).getIdSpringBean()+"]["+lstStpr.get(0).getNombre()+"]");
         
-        BeanResp resp = springBeanService.getBeanResp();
+        BeanResp resp = springBeanService.getBeanResp(req);
         System.out.println("resp:"+resp.getBeans().size());
         
         springBeanService.delete(springBean);

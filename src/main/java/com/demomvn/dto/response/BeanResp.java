@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.demomvn.spring.model.SpringBean;
+import com.demomvn.spring.model.SpringBeanStpr;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -14,13 +15,13 @@ public class BeanResp implements Serializable{
 
 private static final long serialVersionUID = 1L;
 	
-	private List<SpringBean> beans = new ArrayList<SpringBean>();
+	private List<SpringBeanStpr> beans = new ArrayList<SpringBeanStpr>();
 
-	public List<SpringBean> getBeans() {
+	public List<SpringBeanStpr> getBeans() {
 		return beans;
 	}
 
-	public void setBeans(List<SpringBean> beans) {
+	public void setBeans(List<SpringBeanStpr> beans) {
 		this.beans = beans;
 	}
 }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.demomvn.dto.request.BeanReq;
 import com.demomvn.dto.response.BeanResp;
 import com.demomvn.spring.dao.SpringBeanDao;
 import com.demomvn.spring.model.SpringBean;
@@ -26,8 +27,8 @@ public class SpringBeanServiceImpl implements SpringBeanService{
         return springBeanDao.getSpringBeanList();
     }
 	
-	public List<SpringBeanStpr> getListSpringBeanStpr(final int idSpringBean){
-		return springBeanDao.getListSpringBeanStpr(idSpringBean);
+	public List<SpringBeanStpr> getListSpringBeanStpr(final BeanReq req){
+		return springBeanDao.getListSpringBeanStpr(req);
 	}
 	
 	public void save(SpringBean springBean){
@@ -38,10 +39,10 @@ public class SpringBeanServiceImpl implements SpringBeanService{
 		springBeanDao.delete(springBean);
 	}
 	
-	public BeanResp getBeanResp(){
+	public BeanResp getBeanResp(final BeanReq req){
 		
 		BeanResp beanResp = new BeanResp();
-		beanResp.setBeans(springBeanDao.getSpringBeanList());
+		beanResp.setBeans(springBeanDao.getListSpringBeanStpr(req));
 		
         return beanResp;
     }

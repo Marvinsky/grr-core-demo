@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.demomvn.dto.request.BeanReq;
 import com.demomvn.spring.dao.SpringBeanDao;
 import com.demomvn.spring.model.SpringBean;
 import com.demomvn.spring.model.SpringBeanStpr;
@@ -28,10 +29,10 @@ public class SpringBeanDaoImpl implements SpringBeanDao{
 		return lstSpringBean;
 	}
 	
-	public List<SpringBeanStpr> getListSpringBeanStpr(final int idSpringBean){
+	public List<SpringBeanStpr> getListSpringBeanStpr(final BeanReq req){
         List<SpringBeanStpr> lst_springBeanSpr = new ArrayList<SpringBeanStpr>();
         
-        lst_springBeanSpr = (List)hibernateTemplate.findByNamedQuery("getListSpringBean", idSpringBean);
+        lst_springBeanSpr = (List)hibernateTemplate.findByNamedQuery("getListSpringBean", req.getNombre());
         
         return lst_springBeanSpr;
     }
