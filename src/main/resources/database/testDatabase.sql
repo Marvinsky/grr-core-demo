@@ -11,10 +11,10 @@ CREATE TABLE `db_demo`.`ta_spring_bean` (
 
 
 DELIMITER $$
-CREATE PROCEDURE `db_demo`.`SP_SPRING_LIST`(pNombre varchar)
+CREATE PROCEDURE `db_demo`.`SP_SPRING_LIST`(pNombre varchar(200))
 BEGIN
 	SELECT idSpringBean, nombre FROM TA_SPRING_BEAN
-    WHERE nombre like 'CONCAT('%',pNombre,'%');
+    WHERE nombre like CONCAT('%',pNombre,'%');
 END;
 
 
